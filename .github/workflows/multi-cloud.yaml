@@ -1,4 +1,4 @@
-name: Deploy with OIDC
+name: Multi-cloud Terraform Deployment
 
 on:
   workflow_dispatch:
@@ -27,17 +27,8 @@ jobs:
 
       - name: Initialize Terraform
         run: |
-          cd Terraform/EKS
-          terraform init  
+          cd envs/dev/aws
+          terraform init
+          terraform plan -var-file="terraform.tfvars"
+          terraform apply -var-file="terraform.tfvars"
 
-      - name: Terraform Validate
-        run: terraform validate
-        working-directory: Terraform/EKS
-
-      - name: Terraform Plan
-        run: terraform plan 
-        working-directory: Terraform/EKS
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
-        working-directory: Terraform/EKS  
