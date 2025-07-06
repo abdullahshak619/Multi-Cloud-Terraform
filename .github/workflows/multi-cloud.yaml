@@ -27,12 +27,16 @@ jobs:
 
       - name: Initialize Terraform
         run: |
-
-          cd multi-cloud-terraform/aws
+          cd envs/dev/aws
           terraform init
-          # terraform import module.s3_storage.aws_s3_bucket.old_bucket my-dev-s3-bucket-multicloud
-          terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
-          terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
+          terraform plan
+          terraform apply
+
+       #   cd multi-cloud-terraform/aws
+       #   terraform init
+       #   # terraform import module.s3_storage.aws_s3_bucket.old_bucket my-dev-s3-bucket-multicloud
+       #   terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
+       #   terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
           
           # terraform destroy -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
 
