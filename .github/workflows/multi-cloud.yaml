@@ -27,8 +27,8 @@ jobs:
 
       - name: Initialize Terraform
         run: |
-          cd multi-cloud-terraform/aws
-          terraform init -backend-config="key=dev/aws/terraform.tfstate"
+          cd multi-cloud-terraform/envs/dev/aws
+          terraform init 
           terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
           terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
           
