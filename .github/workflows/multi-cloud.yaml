@@ -30,7 +30,7 @@ jobs:
           cd multi-cloud-terraform/aws
           terraform init -backend-config="key=dev/aws/terraform.tfstate"
           terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
-          terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
+          terraform destroy -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
           
         #  cd multi-cloud-terraform/envs/dev/aws
         #  terraform init
