@@ -30,7 +30,7 @@ jobs:
           cd multi-cloud-terraform/envs/dev/aws
           terraform init 
           terraform plan 
-          terraform apply -auto-approve 
+          terraform destroy -auto-approve 
           
         #  cd multi-cloud-terraform/envs/dev/aws
         #  terraform init
