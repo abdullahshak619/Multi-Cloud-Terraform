@@ -1,6 +1,5 @@
 multi-cloud-terraform/
 ├── aws/
-    └── backend.tf
 │   └── main.tf              <-- calls the module
 │   └── variables.tf
 │   └── outputs.tf
@@ -13,5 +12,6 @@ multi-cloud-terraform/
 ├── envs/
     └── dev/
         └── aws/
+            └── backend.tf
             └── providers.tf
             └── terraform.tfvars
