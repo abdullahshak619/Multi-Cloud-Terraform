@@ -28,10 +28,8 @@ jobs:
     
       - name: Initialize Terraform
         run: |
-          cd multi-cloud-terraform/envs/dev/aws
+          cd multi-cloud-terraform/aws
           terraform init 
-          cd ../../../aws
-          terraform show
           terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
           terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
           
