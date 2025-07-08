@@ -28,7 +28,7 @@ jobs:
     
       - name: Initialize Terraform
         run: |
-          multi-cloud-terraform/envs/dev/aws
+          cd multi-cloud-terraform/envs/dev/aws
           terraform init 
           cd multi-cloud-terraform/aws
           terraform show
