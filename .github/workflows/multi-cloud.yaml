@@ -25,16 +25,15 @@ jobs:
         with:
           terraform_version: 1.5.0
 
-      - name: Clean .terraform (ensure re-init)
-        run: rm -rf multi-cloud-terraform/aws/.terraform     
-
+    
       - name: Initialize Terraform
         run: |
-          cd multi-cloud-terraform/aws
+          multi-cloud-terraform/envs/dev/aws
           terraform init 
+          cd multi-cloud-terraform/aws
           terraform show
-         # terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
-         # terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
+          terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
+          terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
           
         #  cd multi-cloud-terraform/envs/dev/aws
         #  terraform init
