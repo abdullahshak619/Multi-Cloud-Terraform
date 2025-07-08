@@ -30,7 +30,7 @@ jobs:
         run: |
           cd multi-cloud-terraform/envs/dev/aws
           terraform init 
-          cd multi-cloud-terraform/aws
+          cd ../../../aws
           terraform show
           terraform plan -var-file="../envs/dev/aws/terraform.tfvars"
           terraform apply -auto-approve -var-file="../envs/dev/aws/terraform.tfvars"
